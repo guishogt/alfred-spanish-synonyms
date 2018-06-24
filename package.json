@@ -1,0 +1,16 @@
+{
+  "name": "alfred-spanish-thesaurus",
+  "version": "1.0.0",
+  "description": "A small Spanish thesaurus for Alfred.app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis Fernandez, guisho.com",
+  "license": "ISC",
+  "dependencies": {
+    "alfy": "^0.7.0",
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2"
+  }
+}
