@@ -28,19 +28,8 @@ function getSynonyms2(word, callback) {
     var synonymsArray = [];
     $('.sinonimo').each(function(i, elem) {
       synonymsArray.push({
-        title: $(this)
-          .text()
-          .trim(),
+        title: $(this).text().trim(),
         arg: URL,
-        mods: {
-          alt: {
-            arg: URL,
-            subtitle: 'Abrir en sinonimosonline.com'
-          },
-          cmd: {
-            subtitle: 'Open in browser'
-          }
-        },
         quicklookurl: URL
       });//push
     }); //each
