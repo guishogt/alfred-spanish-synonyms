@@ -1,8 +1,11 @@
-
+/**
+* Author, Luis Fernandez, guisho.com
+**/
 const alfy = require('alfy');
 let axios = require('axios');
 let cheerio = require('cheerio');
 let fs = require('fs');
+let Iconv = require('iconv').Iconv;
 
 
 /**
@@ -20,14 +23,22 @@ let fs = require('fs');
 	};
   let URL = 'https://www.sinonimosonline.com/' + word + '/';
   //console.log(URL);
-  axios.get(URL).then(
+  let axiosConfig = {
+
+      //charset: 'UTF-8'
+    encoding: 'latin1',
+    responseType: 'text/html',
+
+  } 
+  axios.get(URL, axiosConfig).then( 
     response => {
 			if (response.status===404){
 				callback([{ title: word }]);
 				return;
 			}
       if (response.status === 200) {
-        const html = response.data;
+        let iconv = new Iconv('LATIN1','ASCII//IGNORE');
+        const html = iconv.convert(response.data);
         const $ = cheerio.load(html, { decodeEntities: false });
         var synonymsArray = [];
         $('.sinonimo').each(function(i, elem) {
@@ -41,7 +52,7 @@ let fs = require('fs');
 									subtitle: 'Abrir en sinonimosonline.com'
 							},
 							cmd : {
-								subtitle: 'Abrir en sol'
+								subtitle: 'Open in browser'
 							}
 						},
 						quicklookurl : URL
@@ -50,9 +61,6 @@ let fs = require('fs');
 				);
 
         });
-
-				//check if the array is empty...
-
 				 callback(synonymsArray);
       }
     },
