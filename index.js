@@ -3,7 +3,7 @@
  **/
 const alfy = require('alfy');
 let cheerio = require('cheerio');
-let Iconv = require('iconv').Iconv;
+
 
 /**
  * This function will:
@@ -19,11 +19,8 @@ function getSynonyms2(word, callback) {
     return;
   }
   let URL = 'https://www.sinonimosonline.com/' + word + '/';
-  alfy.fetch(URL, {encoding: "utf-8", json: false}).then(data => {
-
-    //const data = response.data;
-    let iconv = new Iconv('latin1', 'utf-8//TRANSLIT');
-    let html = iconv.convert(data);
+  alfy.fetch(URL, {encoding: "latin1", json: false}).then(data => {
+    let html = data;
     const $ = cheerio.load(html, { decodeEntities: false });
     var synonymsArray = [];
     $('.sinonimo').each(function(i, elem) {
