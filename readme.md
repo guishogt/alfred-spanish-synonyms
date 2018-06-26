@@ -8,4 +8,4 @@ This is a Thesarurus for Spanish words. As there are not many (I couldn't find a
 This worflow is based on Alfy https://github.com/sindresorhus/alfy.
 
 
-[Here you can find the story behind this.] (https://goo.gl/iRyQnC) 
+[Here you can find the story behind this.](https://goo.gl/iRyQnC) 
