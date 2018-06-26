@@ -18,8 +18,9 @@ function getSynonyms2(word, callback) {
     callback([{ title: word }]);
     return;
   }
+  word=word.replace(/ /g,'-');
   let URL = 'https://www.sinonimosonline.com/' + word + '/';
-  alfy.fetch(URL, {encoding: "latin1", json: false}).then(data => {
+  alfy.fetch(URL, {encoding: 'latin1', json: false}).then(data => {
     let html = data;
     const $ = cheerio.load(html, { decodeEntities: false });
     var synonymsArray = [];
@@ -31,7 +32,9 @@ function getSynonyms2(word, callback) {
       });//push
     }); //each
     callback(synonymsArray);
-
+  }).catch(function (){
+    callback([{ title: word }]);
+    return;
   });
 }
 
