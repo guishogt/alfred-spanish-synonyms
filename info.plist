@@ -7,7 +7,21 @@
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
-	<dict/>
+	<dict>
+		<key>8DB8911F-8F47-4EA0-9C37-2447E9488ED7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6F79332A-EDBC-481C-9AD3-3AF0AF8B818D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
 	<key>createdby</key>
 	<string>Luis Fernandez</string>
 	<key>description</key>
@@ -66,11 +80,44 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>6F79332A-EDBC-481C-9AD3-3AF0AF8B818D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>#Ussage
+Just type "sps" on Alfred and a list of sysnonims (shall they are found) will be displayed. The user can preview (by clicking Shift) or can open the page in https://www.sinonimosonline.com/ with more detailed info about the synonym. 
+
+#Credits 
+
+This is a Thesarurus for Spanish words. As there are not many (I couldn't find any) open APIs for thesaurus in Spanish, I used https://www.sinonimosonline.com/. 
+
+This worflow is based on Alfy https://github.com/sindresorhus/alfy.</string>
 	<key>uidata</key>
 	<dict>
+		<key>6F79332A-EDBC-481C-9AD3-3AF0AF8B818D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>670</integer>
+			<key>ypos</key>
+			<integer>550</integer>
+		</dict>
 		<key>8DB8911F-8F47-4EA0-9C37-2447E9488ED7</key>
 		<dict>
 			<key>xpos</key>
@@ -79,6 +126,8 @@
 			<integer>550</integer>
 		</dict>
 	</dict>
+	<key>version</key>
+	<string>1.0</string>
 	<key>webaddress</key>
 	<string>guisho.com</string>
 </dict>
