@@ -8,4 +8,8 @@ This is a Thesarurus for Spanish words. As there are not many (I couldn't find a
 This worflow is based on Alfy https://github.com/sindresorhus/alfy.
 
 
-[Here you can find the story behind this.](https://goo.gl/iRyQnC) 
+[Here you can find the story behind this.](https://goo.gl/iRyQnC)
+
+
+Note: This worflow uses node. If you get a message like this one:
+"Couldn't find the 'node' binary. Symlink it to '/usr/local/bin'", please go ahead and [download npm from here](https://nodejs.org/en/)  
